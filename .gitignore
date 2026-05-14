@@ -1,0 +1,23 @@
+# 依赖文件夹（几万个文件，无需跟踪）
+node_modules/
+package-lock.json
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+npm-debug.log*
+
+# 编辑器配置文件（个人设置，不纳入项目）
+.vscode/
+.idea/
+
+# 临时文件
+*.tmp
+*.temp
+
+# 打包产物（后续上线时生成，开发时不跟踪）
+dist/
+build/

@@ -675,3 +675,65 @@ img {
     flex-direction: row;
   }
 }
+
+/* 导航链接高亮样式 */
+.nav__link--active {
+  color: var(--clr-accent, #3b82f6);
+  font-weight: 600;
+  position: relative;
+}
+
+/* 可选：添加下划线效果 */
+.nav__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--clr-accent, #3b82f6);
+  border-radius: 2px;
+}
+
+/* ============================================
+   返回顶部按钮
+   ============================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(59, 130, 246, 0.7); /* 半透明蓝色 */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  /* 默认隐藏 */
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+/* 悬停效果：完全不透明 */
+.back-to-top:hover {
+  background-color: rgba(59, 130, 246, 1);
+  transform: translateY(-2px);
+}
+
+/* 点击效果 */
+.back-to-top:active {
+  transform: translateY(0);
+}
+
+/* 显示状态 */
+.back-to-top--visible {
+  opacity: 1;
+  visibility: visible;
+}

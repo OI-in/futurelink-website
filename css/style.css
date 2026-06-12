@@ -1,0 +1,144 @@
+/* CSS变量定义 */
+:root {
+  --clr-bg-header: #0f172a;
+  --clr-text-secondary: #94a3b8;
+  --clr-text-white: #ffffff;
+  --clr-accent: #3b82f6;
+}
+
+/* 导航栏样式 */
+.site-header {
+  background-color: var(--clr-bg-header);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-header__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+/* Logo样式 */
+.site-header__logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.site-header__logo-icon {
+  font-size: 1.5rem;
+  color: var(--clr-accent);
+}
+
+.site-header__logo-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--clr-text-white);
+}
+
+/* 导航菜单样式 */
+.nav__list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  color: var(--clr-text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: var(--clr-text-white);
+}
+
+/* 页脚样式 */
+.site-footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  margin-top: 4rem;
+}
+
+.site-footer__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.site-footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.site-footer__logo-icon {
+  font-size: 1.5rem;
+  color: var(--clr-accent, #3b82f6);
+}
+
+.site-footer__logo-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--clr-text-white, #ffffff);
+}
+
+.site-footer__title {
+  color: var(--clr-text-white, #ffffff);
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.site-footer__list {
+  list-style: none;
+  padding: 0;
+}
+
+.site-footer__list li {
+  margin-bottom: 0.5rem;
+}
+
+.site-footer__link {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-footer__link:hover {
+  color: var(--clr-text-white, #ffffff);
+}
+
+.site-footer__social {
+  display: flex;
+  gap: 1rem;
+}
+
+.site-footer__social-link {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-footer__social-link:hover {
+  color: var(--clr-text-white, #ffffff);
+}
+
+.site-footer__bottom {
+  border-top: 1px solid #1e293b;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.875rem;
+}

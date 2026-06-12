@@ -131,10 +131,15 @@
 
   // 返回顶部功能
   function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth', // 平滑滚动
-    });
+    if ('scrollBehavior' in document.documentElement.style) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth', // 平滑滚动
+      });
+    } else {
+      // 降级方案：瞬间滚动
+      window.scrollTo(0, 0);
+    }
   }
 
   // 监听滚动事件（使用节流优化性能）

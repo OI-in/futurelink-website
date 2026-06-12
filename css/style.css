@@ -122,8 +122,7 @@ img {
   min-height: 600px; /* 防止太矮的屏幕内容溢出 */
   position: relative;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('https://picsum.photos/1920/1080?random=1');
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/1.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -218,8 +217,10 @@ img {
 }
 
 .product-card__image {
+  width: 100%;
   height: 200px;
-  background: linear-gradient(135deg, var(--clr-accent), #60a5fa);
+  object-fit: cover;
+  display: block;
 }
 
 .product-card__title {
@@ -332,6 +333,7 @@ img {
   gap: 3rem;
 }
 
+/* 图片容器 */
 .about__image-wrapper {
   flex: 1;
 }
@@ -340,11 +342,12 @@ img {
   width: 100%;
   height: auto;
   border-radius: 1rem;
-  background: linear-gradient(135deg, var(--clr-accent), #60a5fa);
-  min-height: 400px;
   object-fit: cover;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* 文字内容区域 */
 .about__content {
   flex: 1;
 }
@@ -358,8 +361,10 @@ img {
 .about__text {
   color: var(--clr-text-secondary);
   margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
+/* 统计数据 */
 .about__stats {
   display: flex;
   gap: 2rem;
@@ -381,7 +386,7 @@ img {
   color: var(--clr-text-secondary);
 }
 
-/* 关于我们响应式 */
+/* 响应式：平板和手机 */
 @media (max-width: 768px) {
   .about__container {
     flex-direction: column;
@@ -390,6 +395,17 @@ img {
 
   .about__stats {
     justify-content: space-around;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about__title {
+    font-size: 1.5rem;
   }
 }
 

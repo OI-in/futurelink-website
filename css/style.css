@@ -571,3 +571,107 @@ img {
     font-size: 0.875rem;
   }
 }
+
+/* ============================================
+   汉堡菜单样式（默认隐藏，桌面端不显示）
+   ============================================ */
+.site-header__hamburger {
+  display: none; /* 桌面端默认隐藏 */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.site-header__hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--clr-text-white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* 汉堡按钮悬停效果 */
+.site-header__hamburger:hover {
+  opacity: 0.8;
+}
+
+/* 汉堡按钮激活态（变成叉号） */
+.site-header__hamburger--active .site-header__hamburger-line:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.site-header__hamburger--active .site-header__hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header__hamburger--active .site-header__hamburger-line:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ============================================
+   移动端响应式（≤768px）
+   ============================================ */
+@media (max-width: 768px) {
+  /* 显示汉堡按钮 */
+  .site-header__hamburger {
+    display: flex;
+  }
+
+  /* 导航菜单默认隐藏 */
+  .site-header__nav {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: var(--clr-bg-header);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  /* 菜单展开状态 */
+  .site-header__nav--active {
+    left: 0;
+  }
+
+  /* 移动端菜单列表样式 */
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .nav__item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav__link {
+    display: block;
+    padding: 0.75rem;
+    font-size: 1.125rem;
+  }
+}
+
+/* ============================================
+   桌面端（>768px）：确保菜单正常显示
+   ============================================ */
+@media (min-width: 769px) {
+  .site-header__nav {
+    display: block !important;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: row;
+  }
+}
